@@ -1,35 +1,15 @@
-import React from "react";
 import { createRoot } from "react-dom";
-
-const House = (props) => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, props.type),
-    React.createElement("h2", {}, props.bed),
-    React.createElement("h2", {}, props.bath),
-  ]);
-};
+import House from "./House";
 
 const App = () => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, "Buy a house!"),
-    React.createElement(House, {
-      type: "apartment",
-      bed: "two",
-      bath: "two",
-    }),
-    React.createElement(House, {
-      type: "house",
-      bed: "three",
-      bath: "two",
-    }),
-    React.createElement(House, {
-      type: "apartment",
-      bed: "five",
-      bath: "three",
-    }),
-  ]);
+  <div>
+    <h1>Buy a house!</h1>
+    <House name="apartment" bed="two" bath="two" />
+    <House name="house" bed="three" bath="two" />
+    <House name="bath house" bed="five" bath="three" />
+  </div>;
 };
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(React.createElement(App));
+root.render(<App />);
