@@ -4,8 +4,7 @@ const HOUSES = ["apartment", "town house", "duplex", "single house", "studio"];
 
 const SeachParams = () => {
   const [location, setLocation] = useState("");
-
-  const [house, updateHouse] = useState("");
+  const [house, setHouse] = useState("");
 
   return (
     <div className="search-params">
@@ -18,6 +17,21 @@ const SeachParams = () => {
             value={location}
             placeholder="location"
           />
+        </label>
+        <label htmlFor="house">
+          House
+          <select
+            id="house"
+            value={house}
+            onChange={(e) => {
+              setHouse(e.target.value);
+            }}
+          >
+            <option />
+            {HOUSES.map((house) => {
+              <option key={house}>{house}</option>;
+            })}
+          </select>
         </label>
         <button>Submit</button>
       </form>
