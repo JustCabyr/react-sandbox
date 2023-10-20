@@ -1,7 +1,11 @@
 import { useState } from "react";
 
+const HOUSES = ["apartment", "town house", "duplex", "single house", "studio"];
+
 const SeachParams = () => {
   const [location, setLocation] = useState("");
+
+  const [house, updateHouse] = useState("");
 
   return (
     <div className="search-params">
